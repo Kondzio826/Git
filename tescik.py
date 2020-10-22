@@ -25,7 +25,7 @@ def logowanie(a,b):
 
 
 user = pobieranie_loginu()
-haslo = input("Podaj hasło:")
+haslo = input("Podaj hasło:\n")
 logowanie(user,haslo)
 
 
