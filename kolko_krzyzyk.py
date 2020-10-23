@@ -34,40 +34,16 @@ def player_choice():
                 game_stat()
     verify = 0
     p[choice-1] = player
-            
-def win_check():
-    if p[0] == "x" and p[1] == "x" and p[2] == "X":
-        win()
-    elif p[3] == "x" and p[4]=="x" and p[5] == "x":
-        win()
-    elif p[6] == "x" and p[7] == "x" and p[8] == "x":
-        win()
-    elif p[0] == "x" and p[3] == "x" and p[6] == "x":
-        win()
-    elif p[1] == "x" and p[4] == "x" and p[7]== "x":
-        win()
-    elif p[2] == "x" and p[5] == "x" and p[8] == "x":
-        win()
-    elif p[0] =="x" and p[4] == "x" and p[8]== "x":
-        win()
-    elif p[2] =="x" and p[4] == "x" and p[6]== "x":
-        win()
-    elif p[0] == "o" and p[1] == "o" and p[2] == "o":
-        win()
-    elif p[3] == "o" and p[4]=="o" and p[5] == "o":
-        win()
-    elif p[6] == "o" and p[7] == "o" and p[8] == "o":
-        win()
-    elif p[0] == "o" and p[3] == "o" and p[6] == "o":
-        win()
-    elif p[1] == "o" and p[4] == "o" and p[7]== "o":
-        win()
-    elif p[2] == "o" and p[5] == "o" and p[8] == "o":
-        win()
-    elif p[0] =="o" and p[4] == "o" and p[8]== "o":
-        win()
-    elif p[2] =="o" and p[4] == "o" and p[6]== "o":
-        win()
+
+def wincheck():
+    triple_win = [[p[0],p[1],p[2]],[p[3],p[4],p[5]],[p[6],p[7],p[8]],[p[0],p[3],p[6]],[p[1],p[5],p[7]],[p[2],p[5],p[8]],[p[0],p[4],p[8]],[p[2],p[4],p[6]]]
+    for possibilites in triple_win:
+        if possibilites[0] == "x" and possibilites[1] == "x" and possibilites[2] == "x":
+            win()
+        elif possibilites[0] == "o" and possibilites[1] == "o" and possibilites[2] == "o":
+            win()
+        else:
+            pass
 
 while game_end != 1:
     if i%2 == 0:
@@ -78,10 +54,5 @@ while game_end != 1:
     instruction()
     game_stat()
     player_choice()
-    win_check()
+    wincheck()
     i+=1
-    
-   
-
-
-    
